@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+<body>   
+
+    <div class="login-form">
+        <h2>WineConnect</h2>
+        <div class="contenedor-imagen">
+            <img src="https://cdn-icons-png.flaticon.com/512/5970/5970147.png" alt="Logo" height="80">
+        </div>
+        <div class="login-form"> 
+            <form action="/auth" method="POST">
+                <input type="text" name="user" id="user" placeholder="Usuario" required>
+                <input type="password" name="pass" id="pass" placeholder="Contraseña" required>
+                <input type="submit" name="class" id="btn-login" value="Login">
+            </form>  
+            <a href="register" class="btn-register">Registro</a>
+        </div> 
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+   <% if (typeof alert != "undefined")  { %>
+    <script>
+    Swal.fire({
+      title:'<%= alertTitle %>',
+      text:'<%= alertMessage %>',
+      icon:'<%= alertIcon %>',
+      showConfirmButton: <%= showConfirmButton %>,
+      timer: <%= timer %>
+    }).then(()=>{
+      window.location='/<%= ruta %>'
+    })
+    </script>
+  <% } %>
+	</div>
+    
+</body>
+</html>

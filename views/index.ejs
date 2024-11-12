@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bienvenido</title>
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: -webkit-repeating-linear-gradient(#1D92A7,#66223b, #66223b);
+            transition: background 0.s ease;
+        }
+
+        .contenedor {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 80%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center; 
+        }
+
+        .contenedor:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .contenedor img { 
+            max-width: 200px; 
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #66223B; 
+            margin-bottom: 20px;
+        }
+
+        a.a-login, a.a-logout {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #66223B;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        a.a-login:hover, a.a-logout:hover {
+            background-color: #417D7A;
+        }
+
+    </style>
+</head>
+<body class="text-center">
+    <div class="contenedor">
+        <img src="https://cdn-icons-png.flaticon.com/512/5970/5970147.png" alt="Logo" height="80"> 
+        <h1>WineConnect</h1>
+        <% if (login) { %>
+            <h1>Usuario conectado: <strong><%= name %></strong></h1> 
+            <a href="logout" class="a-logout">Logout</a>
+        <% } else { %>
+            <h1><strong><%= name %></strong></h1>
+            <a href="login" class="a-login">Ir a Login</a>
+        <% } %>
+    </div>
+</body>
+</html>
